@@ -1,0 +1,45 @@
+[package]
+name = "qust"
+version = "0.1.0"
+authors = ["odd <odd12258053@gmail.com>"]
+edition = "2018"
+description = "Qust is a fast and straightforward job queue implemented by Rust."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+env_logger = "0.8.2"
+interaction = "0.3.3"
+log = { version ="0.4.11", features = ["max_level_debug", "release_max_level_info"]}
+mio = { version = "0.7.7", features = ["net", "os-poll"] }
+signal-hook = "0.3.3"
+uuid = { version = "0.8.2", features = ["v4"] }
+
+[dev-dependencies]
+criterion = "0.3.3"
+
+[[bin]]
+bench = false
+path = "src/app/app.rs"
+name = "qust"
+
+[[bin]]
+bench = false
+path = "src/app/cli.rs"
+name = "qust_cli"
+
+[lib]
+bench = false
+path = "src/lib.rs"
+
+[[bench]]
+name = "server"
+harness = false
+
+[[bench]]
+name = "algo"
+harness = false
+
+[[test]]
+name = "server"
+path = "tests/server.rs"
