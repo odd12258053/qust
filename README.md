@@ -1,6 +1,6 @@
 # Qust
 
-Qust is a fast and straightforward job queue implemented by Rust.
+Qust is a fast and straightforward in-memory job queue implemented by Rust.
 
 # API
 
